@@ -115,7 +115,7 @@ Email: buibanh2k4@gmail.com.
 
 ---
 
-[def]: image.png
-[def2]: image-1.png
-[def3]: image-2.png
-[def4]: image-3.png
+[def]: ![alt text](image.png)
+[def2]:![alt text](image-1.png)
+[def3]: ![alt text](image-2.png)
+[def4]: ![alt text](image-3.png)
