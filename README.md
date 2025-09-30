@@ -86,60 +86,18 @@ Cho phép **nhiều client** trò chuyện thời gian thực, chia sẻ tệp q
   <p align="center"><i>Hình 4</i></p>
 
 ---
+## 🚀 5) Cài đặt & Chạy
 
-## 📦 5) Cấu trúc thư mục gợi ý
-
-### 📂 Cấu trúc thư mục
-📦 TCP-File-Chat
-├── 📂 src
-│   ├── 📂 client
-│   │   ├── ClientMain.java        # Điểm vào client
-│   │   ├── ChatWindow.java        # Giao diện chat
-│   │   ├── FileSender.java        # Xử lý gửi file
-│   │   ├── FileReceiver.java      # Xử lý nhận file
-│   │   └── ClientAdapter.java     # Kết nối UI ↔ Socket
-│   │
-│   ├── 📂 server
-│   │   ├── ServerMain.java        # Điểm vào server
-│   │   ├── ServerWindow.java      # Giao diện server
-│   │   ├── ClientHandler.java     # Xử lý client đa luồng
-│   │   └── ServerLogger.java      # Ghi log & quản lý lịch sử
-│   │
-│   └── 📂 common
-│       └── Protocol.java          # Định nghĩa gói tin, hằng số
-│
-├── 📂 docs
-│   ├── aiotlab_logo.png
-│   ├── fitdnu_logo.png
-│   ├── dnu_logo.png
-│   └── (ảnh minh họa giao diện)
-│
-├── 📂 scripts
-│   ├── build.sh
-│   ├── run_server.sh
-│   ├── run_client.sh
-│   ├── build.bat
-│   ├── run_server.bat
-│   └── run_client.bat
-│
-├── .gitignore
-├── README.md
-└── LICENSE
-
-
----
-## 🚀 6) Cài đặt & Chạy
-
-### 6.1. Yêu cầu
+### 5.1. Yêu cầu
 - **JDK 8+** (khuyến nghị JDK 17/21)
 - IDE (Eclipse/IntelliJ/VS Code + Extension Java) hoặc dòng lệnh.
 
-### 6.2. Clone nguồn
+### 5.2. Clone nguồn
 
 git clone https://github.com/<your-username>/<your-repo>.git
 cd <your-repo>
 
-### 6.3. Chạy bằng IDE
+### 5.3. Chạy bằng IDE
 Import project (Java Project).
 
 Chạy Server trước: server.ServerMain
@@ -150,7 +108,7 @@ Chạy Client: client.ClientMain
 
 Nhập Server IP (ví dụ 127.0.0.1 nếu cùng máy) và Port (ví dụ 5555) → Connect.
 
-### 6.4. Chạy bằng dòng lệnh
+### 5.4. Chạy bằng dòng lệnh
 bash
 Sao chép mã
 # Từ thư mục gốc
@@ -159,12 +117,12 @@ javac -d out src/server/*.java src/client/*.java
 java -cp out server.ServerMain 5555
 # Client (kết nối tới 127.0.0.1:5555)
 java -cp out client.ClientMain 127.0.0.1 5555
-### 6.5. Gửi/nhận file
+### 5.5. Gửi/nhận file
 Client bấm 📎 Send File → chọn tệp → thấy progress.
 
 Bên nhận sẽ hiện hộp thoại Chấp nhận → chọn Accept để lưu, Decline để hủy.
 
-### 6.6. Lỗi thường gặp & Cách xử lý
+### 5.6. Lỗi thường gặp & Cách xử lý
 Connection refused: Server chưa chạy/Port sai → chạy server & kiểm tra port.
 
 Address already in use: Cổng đã bị chiếm → đổi port (vd 5556) hoặc kill tiến trình cũ.
@@ -175,7 +133,7 @@ Khác mạng LAN: Dùng IP thật của server (ipconfig) và mở port trên ro
 
 ---
 
-## 🧩 7) Protocol đơn giản
+## 🧩 6) Protocol đơn giản
 Dòng header: TYPE|FILENAME|SIZE|SENDER|TIMESTAMP\n
 
 TYPE = MSG | FILE_OFFER | FILE_DATA | FILE_DECLINE
@@ -190,7 +148,7 @@ FILE_DECLINE: server thông báo cho người gửi.
 
 ---
 
-## 🧪 8) Các dự án (mở rộng)
+## 🧪 7) Các dự án (mở rộng)
 Project 1: Truyền file TCP cơ bản (1–1).
 
 Project 2: Ứng dụng chat TCP đa luồng (broadcast, xác nhận nhận file).
