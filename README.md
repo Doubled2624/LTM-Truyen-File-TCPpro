@@ -76,7 +76,7 @@ Hệ thống cho phép nhiều người dùng giao tiếp **thời gian thực**
 - Giao diện Client gửi file.
 
 <p align="center"> <img width="800" height="800" alt="image" src=image-2.png/> </p>
-<p align="center"><i>Hình ảnh 3<-/i></p>
+<p align="center"><i>Hình ảnh 3</i></p>
 
 - Giao diện Server nhận file.
 <p align="center"> <img width="800" height="800" alt="image" src=image-3.png/> </p>
@@ -84,25 +84,47 @@ Hệ thống cho phép nhiều người dùng giao tiếp **thời gian thực**
 
 ## 📝 4. Hướng dẫn cài đặt và sử dụng
 
-Project 1: Hệ thống truyền file qua TCP đơn giản
-Project 2: Ứng dụng chat TCP đa luồng
-Project 3: Hệ thống quản lý truyền tải dữ liệu mạng LAN
-(Liệt kê các dự án hoặc ứng dụng bạn đã phát triển dựa trên nền tảng hoặc công nghệ tương tự)
+### 6.1. Yêu cầu
+- **JDK 8+** (khuyến nghị JDK 17/21)
+- IDE (Eclipse/IntelliJ/VS Code + Extension Java) hoặc dòng lệnh.
 
-⚙️5.Các bước cài đặt
+### 6.2. Clone nguồn
+```bash
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
+### 6.3. Chạy bằng IDE
+Import project (Java Project).
 
-Cài đặt JDK: Tải và cài đặt JDK 8 hoặc mới hơn từ trang chính thức của Oracle hoặc OpenJDK.
-Tải source code: Clone hoặc tải mã nguồn của hệ thống từ repository.
-Biên dịch và chạy Server:
-Mở terminal hoặc IDE.
-Chạy file Client.java.
-Biên dịch và chạy Client:
-Mở terminal hoặc IDE.
-Chỉnh sửa đường dẫn file trong FileSender.java.
-Chạy file Sever.java.
-Kiểm tra kết nối: Đảm bảo server và client cùng mạng hoặc có thể kết nối qua IP và port đã cấu hình.
-Truyền file: Thực hiện gửi file từ client, server sẽ nhận và lưu file.
+Chạy Server trước: server.ServerMain
 
+Cấu hình IP/Port hiển thị trên server (mặc định 0.0.0.0:5555).
+
+Chạy Client: client.ClientMain
+
+Nhập Server IP (ví dụ 127.0.0.1 nếu cùng máy) và Port (ví dụ 5555) → Connect.
+
+### 6.4. Chạy bằng dòng lệnh
+bash
+Sao chép mã
+# Từ thư mục gốc
+javac -d out src/server/*.java src/client/*.java
+# Server
+java -cp out server.ServerMain 5555
+# Client (kết nối tới 127.0.0.1:5555)
+java -cp out client.ClientMain 127.0.0.1 5555
+### 6.5. Gửi/nhận file
+Client bấm 📎 Send File → chọn tệp → thấy progress.
+
+Bên nhận sẽ hiện hộp thoại Chấp nhận → chọn Accept để lưu, Decline để hủy.
+
+### 6.6. Lỗi thường gặp & Cách xử lý
+Connection refused: Server chưa chạy/Port sai → chạy server & kiểm tra port.
+
+Address already in use: Cổng đã bị chiếm → đổi port (vd 5556) hoặc kill tiến trình cũ.
+
+Firewall chặn: Cho phép Java/port qua tường lửa.
+
+Khác mạng LAN: Dùng IP thật của server (ipconfig) và mở port trên router nếu cần.
 
 📌 *Lưu ý: Có thể tùy chỉnh tên database, tài khoản admin, giao diện theo nhu cầu.*
 
