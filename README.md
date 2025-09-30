@@ -92,29 +92,40 @@ Cho phép **nhiều client** trò chuyện thời gian thực, chia sẻ tệp q
 ### 📂 Cấu trúc thư mục
 📦 TCP-File-Chat
 ├── 📂 src
-│ ├── 📂 client
-│ │ ├── ClientMain.java
-│ │ ├── ChatWindow.java
-│ │ ├── FileSender.java
-│ │ ├── FileReceiver.java
-│ │ └── ClientAdapter.java
-│ ├── 📂 server
-│ │ ├── ServerMain.java
-│ │ ├── ServerWindow.java
-│ │ ├── ClientHandler.java
-│ │ └── ServerLogger.java
-│ └── 📂 common
-│ └── Protocol.java
+│   ├── 📂 client
+│   │   ├── ClientMain.java        # Điểm vào client
+│   │   ├── ChatWindow.java        # Giao diện chat
+│   │   ├── FileSender.java        # Xử lý gửi file
+│   │   ├── FileReceiver.java      # Xử lý nhận file
+│   │   └── ClientAdapter.java     # Kết nối UI ↔ Socket
+│   │
+│   ├── 📂 server
+│   │   ├── ServerMain.java        # Điểm vào server
+│   │   ├── ServerWindow.java      # Giao diện server
+│   │   ├── ClientHandler.java     # Xử lý client đa luồng
+│   │   └── ServerLogger.java      # Ghi log & quản lý lịch sử
+│   │
+│   └── 📂 common
+│       └── Protocol.java          # Định nghĩa gói tin, hằng số
 │
 ├── 📂 docs
-│ ├── aiotlab_logo.png
-│ ├── fitdnu_logo.png
-│ ├── dnu_logo.png
-│ └── (ảnh minh họa giao diện)
+│   ├── aiotlab_logo.png
+│   ├── fitdnu_logo.png
+│   ├── dnu_logo.png
+│   └── (ảnh minh họa giao diện)
+│
+├── 📂 scripts
+│   ├── build.sh
+│   ├── run_server.sh
+│   ├── run_client.sh
+│   ├── build.bat
+│   ├── run_server.bat
+│   └── run_client.bat
 │
 ├── .gitignore
 ├── README.md
 └── LICENSE
+
 
 ---
 ## 🚀 6) Cài đặt & Chạy
